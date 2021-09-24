@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.pass-application {
+  padding: 12px;
+
+  &__message {
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 0;
+  }
+}

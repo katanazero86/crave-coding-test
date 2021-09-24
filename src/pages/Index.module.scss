@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.app {
+
+  &__wrap {
+
+    padding: 12px;
+    display: flex;
+
+    .left {
+      margin: 4px;
+      flex-grow: 1;
+      flex-basis: 50%;
+    }
+
+    .right {
+      margin: 4px;
+      flex-grow: 1;
+      flex-basis: 50%;
+    }
+  }
+
+}
