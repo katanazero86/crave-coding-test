@@ -1,11 +1,25 @@
+@charset "UTF-8";
+
 .app {
 
   padding: 12px;
+  display: flex;
+
+  &__left {
+    margin: 4px;
+    flex-grow: 1;
+    flex-basis: 50%;
+  }
+
+  &__right {
+    margin: 4px;
+    flex-grow: 1;
+    flex-basis: 50%;
+  }
 
   &__user {
     display: flex;
     border: 1px solid #74747E;
-    width: 50%;
 
     align-items: center;
 

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.pagination {
+
+  font-size: 14px;
+
+  > span {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  &__prev {
+
+  }
+
+  &__next {
+
+  }
+
+  &__page {
+    padding: 0 4px;
+  }
+
+  &__page--active {
+    font-weight: 600;
+    color: darkred;
+  }
+}
