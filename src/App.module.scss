@@ -1,0 +1,33 @@
+.app {
+
+  padding: 12px;
+
+  &__user {
+    display: flex;
+    border: 1px solid #74747E;
+    width: 50%;
+
+    align-items: center;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+
+    .user-info {
+      flex-grow: 1;
+      > p {
+        font-size: 12px;
+        letter-spacing: -0.2px;
+        padding: 0 8px;
+      }
+    }
+
+    .pass-button {
+      margin-right: 8px;
+      font-size: 15px;
+      padding: 4px 12px;
+    }
+
+  }
+
+}
