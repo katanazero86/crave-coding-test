@@ -10,7 +10,7 @@ interface PaginationProps {
   handelPageClick?(targetPage: number): void;
 }
 
-export default function Pagination({ total, page, size, handelPageClick }: PaginationProps): React.ReactElement {
+const Pagination = ({ total, page, size, handelPageClick }: PaginationProps): React.ReactElement => {
   const [pageNumbers, setPageNumbers] = useState<number[]>([]);
   const [totalPage, setTotalPage] = useState<number>(0);
 
@@ -45,6 +45,9 @@ export default function Pagination({ total, page, size, handelPageClick }: Pagin
   useEffect(() => {
     if (total > 0) {
       initPagination();
+    } else {
+      setPageNumbers([]);
+      setTotalPage(0);
     }
   }, [page, total, size]);
 
@@ -72,4 +75,6 @@ export default function Pagination({ total, page, size, handelPageClick }: Pagin
       )}
     </div>
   );
-}
+};
+
+export default React.memo(Pagination);
