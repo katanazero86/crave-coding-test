@@ -1,6 +1,6 @@
 import React from 'react';
-import { UsersInterface } from '../../../types/usersTypes';
-import classes from '../../../App.module.scss';
+import { UsersInterface } from '../../types/usersTypes';
+import classes from './User.module.scss';
 
 interface UserProps {
   targetUser: UsersInterface;
@@ -12,11 +12,11 @@ interface UserProps {
 export default function User({
   targetUser,
   isPass = false,
-  handlePassClick = () => {},
-  handleUnPassClick = () => {},
+  handlePassClick,
+  handleUnPassClick,
 }: UserProps): React.ReactElement {
   return (
-    <section className={classes.appUser}>
+    <section className={classes.user}>
       <img src={targetUser.picture.thumbnail} alt='user image' width='48' height='48' />
       <div className={classes.userInfo}>
         <p>
@@ -25,15 +25,17 @@ export default function User({
         <p>{targetUser.cell}</p>
         <p>{targetUser.email}</p>
       </div>
-      {isPass ? (
-        <button className={classes.passButton} onClick={() => handleUnPassClick(targetUser)}>
-          UnPass
-        </button>
-      ) : (
-        <button className={classes.passButton} onClick={() => handlePassClick(targetUser)}>
-          PASS
-        </button>
-      )}
+      {isPass
+        ? handleUnPassClick && (
+            <button className={classes.passButton} onClick={() => handleUnPassClick(targetUser)}>
+              UnPass
+            </button>
+          )
+        : handlePassClick && (
+            <button className={classes.passButton} onClick={() => handlePassClick(targetUser)}>
+              PASS
+            </button>
+          )}
     </section>
   );
 }

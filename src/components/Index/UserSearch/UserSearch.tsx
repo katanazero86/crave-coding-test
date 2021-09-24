@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classes from './UserSearch.module.scss';
 
 interface UserSearchProps {
   handleSearchClick(targetText: string): void;
@@ -17,7 +18,7 @@ export default function UserSearch({ handleSearchClick }: UserSearchProps): Reac
   };
 
   return (
-    <div>
+    <div className={classes.userSearch}>
       <input type='text' value={text} onChange={(e) => handleTextChange(e)} onKeyPress={handleKeyUp} />
       <button type='button' onClick={() => handleSearchClick(text)}>
         Search
